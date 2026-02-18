@@ -58,10 +58,10 @@ function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-gray-50 p-2">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold text-blue-600">Dashboard</h1>
+        <h1 className="text-2xl font-semibold text-gray-600">Dashboard</h1>
       </div>
 
       {/* Stats Cards */}
@@ -104,21 +104,26 @@ function Dashboard() {
       </div>
 
       {/* Visitor Table */}
-      <div className="bg-white rounded-lg shadow overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full">
+      <div className="bg-white rounded-3xl shadow-sm p-4 w-[80%]">
+        {" "}
+        {/* Increased padding for the "frame" effect */}
+        <div className="">
+          {/* Removed w-full and added a specific max-width or let it wrap content */}
+          <table className="min-w-full border-separate border-spacing-y-0">
             <thead>
-              <tr className="border-b border-gray-200">
-                <th className="text-left p-4 text-sm font-medium text-red-500">
+              <tr className="bg-gray-50/80">
+                {" "}
+                {/* Subtle gray header background */}
+                <th className="text-left py-4 px-8 text-sm font-semibold text-red-500 first:rounded-l-2xl">
                   Visitor Name
                 </th>
-                <th className="text-left p-4 text-sm font-medium text-red-500">
+                <th className="text-left py-4 px-8 text-sm font-semibold text-red-500">
                   Company Name
                 </th>
-                <th className="text-left p-4 text-sm font-medium text-red-500">
+                <th className="text-left py-4 px-8 text-sm font-semibold text-red-500">
                   ID Number
                 </th>
-                <th className="text-left p-4 text-sm font-medium text-red-500">
+                <th className="text-left py-4 px-8 text-sm font-semibold text-red-500 last:rounded-r-2xl">
                   Email
                 </th>
               </tr>
@@ -127,16 +132,21 @@ function Dashboard() {
               {visitorData.map((visitor, idx) => (
                 <tr
                   key={idx}
-                  className="border-b border-gray-100 hover:bg-gray-50"
+                  className="group hover:bg-gray-50/50 transition-colors"
                 >
-                  <td className="p-4 text-sm text-gray-800">{visitor.name}</td>
-                  <td className="p-4 text-sm text-gray-800">
+                  {/* Using px-8 to create the wide column spacing seen in your image */}
+                  <td className="py-5 px-8 text-sm text-gray-800 font-medium">
+                    {visitor.name}
+                  </td>
+                  <td className="py-5 px-8 text-sm text-gray-600">
                     {visitor.company}
                   </td>
-                  <td className="p-4 text-sm text-gray-800">
+                  <td className="py-5 px-8 text-sm text-gray-600">
                     {visitor.idNumber}
                   </td>
-                  <td className="p-4 text-sm text-gray-600">{visitor.email}</td>
+                  <td className="py-5 px-8 text-sm text-gray-600">
+                    {visitor.email}
+                  </td>
                 </tr>
               ))}
             </tbody>

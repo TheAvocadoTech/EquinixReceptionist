@@ -75,8 +75,8 @@ function Companies() {
         companies.map((c) =>
           c.id === editingCompany.id
             ? { ...c, ...formData, employees: Number(formData.employees || 0) }
-            : c
-        )
+            : c,
+        ),
       );
     } else {
       setCompanies([
@@ -105,11 +105,11 @@ function Companies() {
   };
 
   return (
-    <div className="min-h-screen  p-6">
+    <div className="min-h-screen  p-2">
       <div className="max-w-2xl">
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <h1 className="text-base font-medium text-gray-900">Companies</h1>
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="text-2xl font-medium text-gray-900">Companies</h1>
           <button
             onClick={handleOpenAddModal}
             className="bg-gray-800 hover:bg-gray-900 text-white px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-2"
@@ -118,7 +118,7 @@ function Companies() {
             <img
               src="/icons/iconsax-add.png"
               alt="Close"
-              className="w-8 h-8 p-1 rounded-md"
+              className="w-8 h-6 p-1 rounded-md"
             />
           </button>
         </div>

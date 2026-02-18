@@ -79,7 +79,7 @@ function Visitors() {
       qrFormData.company
     ) {
       alert(
-        `QR Code sent successfully!\n\nName: ${qrFormData.name}\nContact: ${qrFormData.contact}\nID: ${qrFormData.idNumber}\nCompany: ${qrFormData.company}`
+        `QR Code sent successfully!\n\nName: ${qrFormData.name}\nContact: ${qrFormData.contact}\nID: ${qrFormData.idNumber}\nCompany: ${qrFormData.company}`,
       );
       setShowQRModal(false);
     } else {
@@ -304,34 +304,39 @@ function Visitors() {
       </div>
 
       {/* Visitors Table */}
-      <div className="bg-white rounded-lg shadow overflow-hidden">
+      <div className="bg-white rounded-3xl shadow-sm p-10 max-w-5xl">
         <div className="overflow-x-auto">
-          <table className="w-full">
+          <table className="w-full border-separate border-spacing-y-0">
             <thead>
-              <tr className="border-b border-gray-200">
-                <th className="text-left p-4 text-sm font-medium text-red-500">
+              {/* Gray pill-shaped header row */}
+              <tr className="bg-gray-50/80">
+                <th className="text-left py-5 px-10 text-sm font-semibold text-red-500 first:rounded-l-2xl w-1/3">
                   Visitor Name
                 </th>
-                <th className="text-left p-4 text-sm font-medium text-red-500">
+                <th className="text-left py-5 px-10 text-sm font-semibold text-red-500 w-1/3">
                   Phone Number
                 </th>
-                <th className="text-right p-4 text-sm font-medium text-red-500">
-                  Action
+                <th className="text-center py-5 px-10 text-sm font-semibold text-red-500 last:rounded-r-2xl w-1/3">
+                  {/* Action header left empty as per screenshot */}
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="divide-y-0">
               {visitors.map((visitor) => (
                 <tr
                   key={visitor.id}
-                  className="border-b border-gray-100 hover:bg-gray-50"
+                  className="hover:bg-gray-50/50 transition-colors"
                 >
-                  <td className="p-4 text-sm text-gray-800">{visitor.name}</td>
-                  <td className="p-4 text-sm text-gray-800">{visitor.phone}</td>
-                  <td className="p-4 text-right">
+                  <td className="py-6 px-10 text-base text-gray-700 font-medium">
+                    {visitor.name}
+                  </td>
+                  <td className="py-6 px-10 text-base text-gray-700">
+                    {visitor.phone}
+                  </td>
+                  <td className="py-6 px-10 text-center">
                     <button
                       onClick={() => handleSendQR(visitor.id)}
-                      className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-sm font-medium"
+                      className="bg-[#ef4444] hover:bg-red-600 text-white px-10 py-2.5 rounded-xl text-sm font-semibold shadow-sm transition-all"
                     >
                       Send QR
                     </button>
