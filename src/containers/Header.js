@@ -4,11 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import BellIcon from "@heroicons/react/24/outline/BellIcon";
 import Bars3Icon from "@heroicons/react/24/outline/Bars3Icon";
 import MagnifyingGlassIcon from "@heroicons/react/24/outline/MagnifyingGlassIcon";
-import Squares2X2Icon from "@heroicons/react/24/outline/Squares2X2Icon";
-import ChevronDownIcon from "@heroicons/react/24/outline/ChevronDownIcon";
 import { openRightDrawer } from "../features/common/rightDrawerSlice";
 import { RIGHT_DRAWER_TYPES } from "../utils/globalConstantUtil";
-import { NavLink, Routes, Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header() {
   const dispatch = useDispatch();
@@ -47,9 +45,14 @@ function Header() {
 
   return (
     <>
-      <div className="navbar sticky top-0 bg-white z-10 shadow-sm border-b border-gray-200 px-6 h-[5rem]">
-        {/* Left Section - Menu toggle and Search */}
+      <div className="navbar sticky top-0 bg-white z-10 shadow-sm border-b border-gray-200 px-6 h-[4.5rem]">
+        {/* <div className="hidden lg:block h-20 w-px mr-4 bg-gray-200 " /> */}
+        {/* Left Section - Logo, Divider, Menu toggle and Search */}
         <div className="flex-1 flex items-center gap-4">
+          {/* Equinix Logo with border box */}
+
+          {/* Vertical Divider Line after Logo */}
+
           {/* Mobile menu toggle */}
           <label
             htmlFor="left-sidebar-drawer"
@@ -73,7 +76,7 @@ function Header() {
 
               {/* Keyboard Shortcut Hint */}
               <div className="flex items-center gap-1.5 ml-2 text-gray-400 select-none">
-                {/* Windows Icon - using a simple SVG for accuracy */}
+                {/* Windows Icon */}
                 <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
                   <path d="M0 3.449L9.75 2.1V11.59H0V3.449zm0 8.851h9.75v9.439L0 20.351V12.3zm10.65-10.42L24 0v11.59h-13.35V1.88zm0 10.42H24V24l-13.35-1.928V12.3z" />
                 </svg>
