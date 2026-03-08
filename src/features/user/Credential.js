@@ -109,7 +109,7 @@ function Companies() {
       <div className="max-w-2xl">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl font-medium text-gray-900">Companies</h1>
+          <h1 className="text-2xl font-semibold text-gray-600">Companies</h1>
           <button
             onClick={handleOpenAddModal}
             className="bg-gray-800 hover:bg-gray-900 text-white px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-2"

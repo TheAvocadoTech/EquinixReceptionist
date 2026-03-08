@@ -264,7 +264,7 @@ function Visitors() {
 
       {/* Header */}
       <div className="mb-1">
-        <h1 className="text-2xl font-semibold text-gray-800">Visitors</h1>
+        <h1 className="text-2xl font-semibold text-gray-600">Visitors</h1>
       </div>
 
       {/* Total Visitors Card */}

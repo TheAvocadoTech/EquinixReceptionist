@@ -50,7 +50,9 @@ export default function IDManagementPage() {
       <div className="max-w-5xl ml-0">
         {/* Header Section */}
         <div className="flex justify-between items-center mb-2">
-          <h1 className="text-2xl font-bold">ID Management</h1>
+          <h1 className="text-2xl font-semibold text-gray-600">
+            ID Management
+          </h1>
           <button className="bg-[#2D2D2D] hover:bg-black text-white pl-5 pr-2 py-2 rounded-xl flex items-center gap-3 transition-all">
             <span className="text-sm font-semibold tracking-wide">Add</span>
             <div className="bg-white/20 p-1.5 rounded-lg">

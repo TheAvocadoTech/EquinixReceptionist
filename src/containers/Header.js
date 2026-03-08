@@ -124,10 +124,16 @@ function Header() {
 
               {/* Filled Down Arrow */}
               <svg
-                className="w-6 h-6 text-gray-800 fill-current"
-                viewBox="0 0 20 20"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                <path
+                  d="M13.5101 15.1999L15.4801 13.2299L18.6901 10.0199C19.3601 9.33993 18.8801 8.17993 17.9201 8.17993L11.6901 8.17993L6.0801 8.17993C5.1201 8.17993 4.6401 9.33993 5.3201 10.0199L10.5001 15.1999C11.3201 16.0299 12.6801 16.0299 13.5101 15.1999Z"
+                  fill="#2D2D2D"
+                />
               </svg>
             </label>
 
@@ -136,17 +142,6 @@ function Header() {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow-xl bg-white rounded-xl w-52 border border-gray-100 z-[1]"
             >
-              <li>
-                <Link to="/app/settings-profile" className="py-3 font-medium">
-                  Profile Settings
-                </Link>
-              </li>
-              <li>
-                <Link to="/app/settings-billing" className="py-3 font-medium">
-                  Bill History
-                </Link>
-              </li>
-              <div className="divider my-1"></div>
               <li>
                 <a
                   onClick={logoutUser}
